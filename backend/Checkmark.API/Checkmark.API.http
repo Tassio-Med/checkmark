@@ -1,0 +1,6 @@
+@Checkmark.API_HostAddress = http://localhost:5199
+
+GET {{Checkmark.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

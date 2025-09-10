@@ -1,0 +1,6 @@
+# Dependencies
+frontend/node_modules/
+backend/bin/
+backend/obj/
+*.db
+*.sqlite
