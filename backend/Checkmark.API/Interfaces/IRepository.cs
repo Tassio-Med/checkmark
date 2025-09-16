@@ -11,6 +11,6 @@ namespace Checkmark.API.Interfaces
     Task<T> AddAsync(T entity);
     Task<T?> UpdateAsync(T entity);
     Task<bool> DeleteAsync(int id);
-    Task<bool> ExixssAsync(int id);
+    Task<bool> ExistsAsync(int id);
   }
 }
