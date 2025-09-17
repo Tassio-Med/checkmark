@@ -9,7 +9,7 @@ namespace Checkmark.API.Interfaces
   {
     Task<IEnumerable<CheckmarkItem>> GetCompletedItemsAsync();
     Task<IEnumerable<CheckmarkItem>> GetPendingItemsAsync();
-    Task<IEnumerable<CheckmarkItem>> GetItemByPriorityAsync(ThreadPriorityLevel priority);
+    Task<IEnumerable<CheckmarkItem>> GetItemsByPriorityAsync(PriorityLevel priority);
 
   }
 }
