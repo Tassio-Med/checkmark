@@ -2,6 +2,8 @@ using Checkmark.API.Data;
 using Checkmark.API.Interfaces;
 using Checkmark.API.Repositories;
 using Microsoft.EntityFrameworkCore;
+using Checkmark.API.Services;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +18,7 @@ builder.Services.AddDbContext<DataDbContext>(options =>
 
 
 builder.Services.AddScoped<ICheckmarkRepository, CheckmarkRepository>();
+builder.Services.AddScoped<ICheckmarkService, CheckmarkService>();
 
 
 builder.Services.AddCors(options =>
