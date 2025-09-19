@@ -11,6 +11,7 @@ namespace Checkmark.API.Controllers
   public class CheckmarkController : ControllerBase
   {
     private readonly ICheckmarkService _checkmarkService;
+    
     public CheckmarkController(ICheckmarkService checkmarkService)
     {
       _checkmarkService = checkmarkService;
@@ -27,7 +28,6 @@ namespace Checkmark.API.Controllers
     public async Task<ActionResult<CheckmarkItem>> GetById(int id)
     {
       var item = await _checkmarkService.GetItemByIdAsync(id);
-
       return item == null ? NotFound() : Ok(item);
     }
 
@@ -35,19 +35,17 @@ namespace Checkmark.API.Controllers
     public async Task<ActionResult<CheckmarkItem>> Create(CheckmarkItem item)
     {
       var createdItem = await _checkmarkService.CreateItemAsync(item);
-
       return CreatedAtAction(nameof(GetById), new { id = createdItem.Id }, createdItem);
     }
 
     [HttpPut("{id}")]
-    public async Task<ActionResult<CheckmarkItem>> Update(int id, CheckmarkItem item)
+    public async Task<IActionResult> Update(int id, CheckmarkItem item)
     {
       if (id != item.Id)
       {
         return BadRequest();
       }
       var updatedItem = await _checkmarkService.UpdateItemAsync(item);
-
       return updatedItem != null ? NoContent() : NotFound();
     }
 
