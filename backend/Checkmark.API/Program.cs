@@ -60,7 +60,6 @@ using (var scope = app.Services.CreateScope())
 }
 
 app.UseCors("AllowReactApp");
-// app.UseHttpsRedirection(); // 
 app.UseAuthorization();
 app.MapControllers();
 
