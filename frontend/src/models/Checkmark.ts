@@ -6,18 +6,19 @@ export interface Checkmark {
   dueDate?: string
   priority: PriorityLevel;
   createdAt: string;
-  updatedAt: string;
+  updatedAt?: string;
 }
 
 export enum PriorityLevel {
-  Low = 'Low',
-  Medium = 'Medium',
-  High = 'High',
+  Low = 0,
+  Medium = 1,
+  High = 2,
 }
 
 export interface CreateCheckmarkRequest {
   title: string;
   description: string;
+  isCompleted: boolean;
   dueDate?: string;
   priority: PriorityLevel;
 }
